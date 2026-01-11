@@ -1,5 +1,7 @@
 from flask import Flask, request
 import sqlite3, os, subprocess, requests, hashlib, pickle, yaml
+import matplotlib
+import time
 import pandas as pd
 import sqlalchemy as sa
 import json
@@ -114,6 +116,14 @@ def zip_folder3():
 
 @app.get("/zip4")
 def zip_folder4():
+    path = request.args.get("path", ".")
+    os.system(f"zip -r out.zip {path}")
+    subprocess.run("ls -l " + path, shell=True)
+    return {"ok": True}
+
+
+@app.get("/zip5")
+def zip_folder5():
     path = request.args.get("path", ".")
     os.system(f"zip -r out.zip {path}")
     subprocess.run("ls -l " + path, shell=True)
@@ -290,6 +300,10 @@ def name_collision_unused():
 
 
 name_collision_unused = "Just a string variable"
+
+## unused
+def name_collision_unused_2():
+    return "I am shadowed_2"
 
 
 @app.get("/trigger_blindspots")
