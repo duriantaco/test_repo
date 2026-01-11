@@ -293,6 +293,9 @@ class HiddenPlugin(BasePlugin):
 def obfus_calc():
     return 42
 
+def obfus_calc_2():
+    return 43
+
 
 ## unused
 def name_collision_unused():
