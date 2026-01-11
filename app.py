@@ -313,6 +313,8 @@ def name_collision_unused_2():
 def name_collision_unused_3():
     return "I am shadowed_3"
 
+def name_collision_unused_4():
+    return "I am shadowed_4"
 
 @app.get("/trigger_blindspots")
 def trigger_blindspots():
