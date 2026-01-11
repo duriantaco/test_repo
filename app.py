@@ -296,6 +296,8 @@ def obfus_calc():
 def obfus_calc_2():
     return 43
 
+def obfus_calc_():
+    return 44
 
 ## unused
 def name_collision_unused():
@@ -307,6 +309,9 @@ name_collision_unused = "Just a string variable"
 ## unused
 def name_collision_unused_2():
     return "I am shadowed_2"
+
+def name_collision_unused_3():
+    return "I am shadowed_3"
 
 
 @app.get("/trigger_blindspots")
