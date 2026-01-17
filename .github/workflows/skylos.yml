@@ -4,6 +4,11 @@ on:
   pull_request:
     branches: [main, master]
 
+permissions:
+  contents: read
+  pull-requests: write
+  checks: write
+
 jobs:
   skylos:
     runs-on: ubuntu-latest
@@ -20,59 +25,6 @@ jobs:
         run: pip install skylos
       
       - name: Run Skylos Scan
-        run: skylos . --json > report.json
         env:
           SKYLOS_TOKEN: ${{ secrets.SKYLOS_TOKEN }}
-      
-      - name: Upload to Skylos & Create Check
-        env:
-          SKYLOS_TOKEN: ${{ secrets.SKYLOS_TOKEN }}
-        run: |
-          python3 << 'PYTHON'
-import json
-import os
-import sys
-
-try:
-    import requests
-except ImportError:
-    print("Installing requests...")
-    os.system("pip install requests")
-    import requests
-
-with open('report.json') as f:
-    report = json.load(f)
-
-sha = "${{ github.event.pull_request.head.sha }}" or "${{ github.sha }}"
-repo_owner = "${{ github.repository_owner }}"
-repo_name = "${{ github.event.repository.name }}"
-
-api_url = os.environ.get('SKYLOS_API_URL', 'https://skylos.dev')
-response = requests.post(
-    f'{api_url}/api/github/check',
-    json={
-        'sha': sha,
-        'report': report,
-        'repo_owner': repo_owner,
-        'repo_name': repo_name
-    },
-    headers={'Authorization': f"Bearer {os.environ['SKYLOS_TOKEN']}"},
-    timeout=30
-)
-
-if response.status_code == 200:
-    data = response.json()
-    print(f"\n{data['summary']}")
-    print(f"Plan: {data['plan']}")
-    
-    if data['conclusion'] == 'failure':
-        print("\n❌ Merge blocked by quality gate")
-        sys.exit(1)
-    else:
-        print("\n✅ Quality gate passed")
-        sys.exit(0)
-else:
-    print(f"\n✗ API error: {response.status_code}")
-    print(response.text)
-    sys.exit(1)
-PYTHON
+        run: skylos . --danger --gate
