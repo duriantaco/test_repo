@@ -37,11 +37,6 @@ def search_users(q: str):
     conn = sqlite3.connect("app.db")
     results = conn.execute(f"SELECT * FROM users WHERE name LIKE '%{q}%'").fetchall()
     return {"results": results}
-
-@app.get("/file")
-def read_file(path: str):
-    with open(path) as f:
-        return {"content": f.read()}
     
 def format_error_respond(status_code: int, message: str):
     return {"error": True, "status": status_code, "detail": message}

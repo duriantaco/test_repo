@@ -1,5 +1,0 @@
-{
-  "matplotlib": "exists",
-  "webunit": "exists",
-  "fastapi": "exists"
-}
