@@ -23,13 +23,13 @@ app.get("/admin/run")
 def admin_run(request: Request):
     cmd = request.query_params.get("cmd", "echo ok")
     os.system(cmd)
-    return {"ran", cmd}
+    return {"ran": cmd}
 
 @app.post("/webhook")
 async def webhook(request: Request):
     payload = await request.json()
     result = eval(payload.get("expr", "None"))
-    return ("result", result)
+    return {"result": result}
 
 @app.get("/file")
 def read_file(path: str):
