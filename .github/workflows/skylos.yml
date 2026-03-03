@@ -36,6 +36,7 @@ jobs:
         run: skylos agent review . --model claude-sonnet-4-20250514 --format json -o skylos-llm-results.json
         env:
           SKYLOS_API_KEY: ${{ secrets.SKYLOS_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
 
       - name: Quality Gate
         run: skylos cicd gate --input skylos-results.json --summary
