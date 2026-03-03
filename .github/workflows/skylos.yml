@@ -29,13 +29,14 @@ jobs:
         run: pip install skylos
 
       - name: Run Skylos Analysis
-        run: skylos . --danger --quality --secrets --baseline --json --diff-base origin/${{ github.base_ref || 'main' }} -o skylos-results.json
+        run: skylos . --danger --quality --secrets --json -o skylos-results.json
 
       - name: Skylos Agent Review (LLM)
         if: github.event_name == 'pull_request'
-        run: skylos agent review . --model claude-sonnet-4-20250514 --json -o skylos-llm-results.json
+        run: skylos agent review . --model claude-sonnet-4-20250514 --format json -o skylos-llm-results.json
         env:
           SKYLOS_API_KEY: ${{ secrets.SKYLOS_API_KEY }}
+
       - name: Quality Gate
         run: skylos cicd gate --input skylos-results.json --summary
 

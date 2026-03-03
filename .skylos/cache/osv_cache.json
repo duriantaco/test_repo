@@ -1,0 +1,112 @@
+{
+  "PyPI:inquirer:3.0.3": [],
+  "PyPI:flask:2.1.1": [
+    {
+      "vuln_id": "GHSA-68rp-wp8r-4726",
+      "aliases": [],
+      "summary": "Known vulnerability (GHSA-68rp-wp8r-4726)",
+      "cvss_score": null,
+      "fixed_version": null,
+      "affected_range": "unknown",
+      "references": []
+    },
+    {
+      "vuln_id": "GHSA-m2qf-hxjv-5gpq",
+      "aliases": [],
+      "summary": "Known vulnerability (GHSA-m2qf-hxjv-5gpq)",
+      "cvss_score": null,
+      "fixed_version": null,
+      "affected_range": "unknown",
+      "references": []
+    },
+    {
+      "vuln_id": "PYSEC-2023-62",
+      "aliases": [],
+      "summary": "Known vulnerability (PYSEC-2023-62)",
+      "cvss_score": null,
+      "fixed_version": null,
+      "affected_range": "unknown",
+      "references": []
+    }
+  ],
+  "PyPI:flask-cors:3.0.3": [
+    {
+      "vuln_id": "GHSA-43qf-4rqw-9q2g",
+      "aliases": [],
+      "summary": "Known vulnerability (GHSA-43qf-4rqw-9q2g)",
+      "cvss_score": null,
+      "fixed_version": null,
+      "affected_range": "unknown",
+      "references": []
+    },
+    {
+      "vuln_id": "GHSA-7rxf-gvfg-47g4",
+      "aliases": [],
+      "summary": "Known vulnerability (GHSA-7rxf-gvfg-47g4)",
+      "cvss_score": null,
+      "fixed_version": null,
+      "affected_range": "unknown",
+      "references": []
+    },
+    {
+      "vuln_id": "GHSA-84pr-m4jr-85g5",
+      "aliases": [],
+      "summary": "Known vulnerability (GHSA-84pr-m4jr-85g5)",
+      "cvss_score": null,
+      "fixed_version": null,
+      "affected_range": "unknown",
+      "references": []
+    },
+    {
+      "vuln_id": "GHSA-8vgw-p6qm-5gr7",
+      "aliases": [],
+      "summary": "Known vulnerability (GHSA-8vgw-p6qm-5gr7)",
+      "cvss_score": null,
+      "fixed_version": null,
+      "affected_range": "unknown",
+      "references": []
+    },
+    {
+      "vuln_id": "GHSA-hxwh-jpp2-84pm",
+      "aliases": [],
+      "summary": "Known vulnerability (GHSA-hxwh-jpp2-84pm)",
+      "cvss_score": null,
+      "fixed_version": null,
+      "affected_range": "unknown",
+      "references": []
+    },
+    {
+      "vuln_id": "GHSA-xc3p-ff3m-f46v",
+      "aliases": [],
+      "summary": "Known vulnerability (GHSA-xc3p-ff3m-f46v)",
+      "cvss_score": null,
+      "fixed_version": null,
+      "affected_range": "unknown",
+      "references": []
+    },
+    {
+      "vuln_id": "PYSEC-2020-43",
+      "aliases": [],
+      "summary": "Known vulnerability (PYSEC-2020-43)",
+      "cvss_score": null,
+      "fixed_version": null,
+      "affected_range": "unknown",
+      "references": []
+    },
+    {
+      "vuln_id": "PYSEC-2024-71",
+      "aliases": [],
+      "summary": "Known vulnerability (PYSEC-2024-71)",
+      "cvss_score": null,
+      "fixed_version": null,
+      "affected_range": "unknown",
+      "references": []
+    }
+  ],
+  "PyPI:libcst:1.8.2": [],
+  "PyPI:rich:14.0.0": [],
+  "PyPI:keyring:25.7.0": [],
+  "PyPI:tree-sitter:0.25.2": [],
+  "PyPI:tree-sitter-typescript:0.23.2": [],
+  "_ts": 1772512601.964115
+}
