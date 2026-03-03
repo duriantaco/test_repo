@@ -47,6 +47,6 @@ jobs:
 
       - name: PR Review Comments
         if: github.event_name == 'pull_request' && always()
-        run: skylos cicd review --input skylos-results.json --diff-base origin/${{ github.base_ref || 'main' }}
+        run: skylos cicd review --input skylos-results.json --llm-input skylos-llm-results.json --diff-base origin/${{ github.base_ref || 'main' }}
         env:
           GH_TOKEN: ${{ github.token }}
