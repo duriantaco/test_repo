@@ -1,0 +1,334 @@
+{
+  "definitions": {
+    "app.signup": {
+      "name": "app.signup",
+      "file": "/Users/oha/test_repo/demo/app.py",
+      "line": 11,
+      "type": "function"
+    },
+    "app.fetch_user": {
+      "name": "app.fetch_user",
+      "file": "/Users/oha/test_repo/demo/app.py",
+      "line": 16,
+      "type": "function"
+    },
+    "app.admin_run": {
+      "name": "app.admin_run",
+      "file": "/Users/oha/test_repo/demo/app.py",
+      "line": 23,
+      "type": "function"
+    },
+    "app.webhook": {
+      "name": "app.webhook",
+      "file": "/Users/oha/test_repo/demo/app.py",
+      "line": 29,
+      "type": "function"
+    },
+    "app.search_users": {
+      "name": "app.search_users",
+      "file": "/Users/oha/test_repo/demo/app.py",
+      "line": 35,
+      "type": "function"
+    },
+    "app.proxy_fetch": {
+      "name": "app.proxy_fetch",
+      "file": "/Users/oha/test_repo/demo/app.py",
+      "line": 42,
+      "type": "function"
+    },
+    "app.format_error_respond": {
+      "name": "app.format_error_respond",
+      "file": "/Users/oha/test_repo/demo/app.py",
+      "line": 46,
+      "type": "function"
+    }
+  },
+  "unused_functions": [
+    {
+      "name": "admin_run",
+      "full_name": "app.admin_run",
+      "simple_name": "admin_run",
+      "type": "function",
+      "file": "/Users/oha/test_repo/demo/app.py",
+      "basename": "app.py",
+      "line": 23,
+      "confidence": 90,
+      "references": 0,
+      "calls": [
+        "app.request.query_params",
+        "app.admin_run.request",
+        "fastapi.Request",
+        "os",
+        "Request.query_params",
+        "os.system",
+        "app.admin_run.cmd"
+      ]
+    },
+    {
+      "name": "format_error_respond",
+      "full_name": "app.format_error_respond",
+      "simple_name": "format_error_respond",
+      "type": "function",
+      "file": "/Users/oha/test_repo/demo/app.py",
+      "basename": "app.py",
+      "line": 46,
+      "confidence": 90,
+      "references": 0,
+      "calls": [
+        "app.int",
+        "app.format_error_respond.status_code",
+        "app.format_error_respond.message",
+        "app.str"
+      ]
+    }
+  ],
+  "unused_imports": [
+    {
+      "name": "yaml",
+      "full_name": "yaml",
+      "simple_name": "yaml",
+      "type": "import",
+      "file": "/Users/oha/test_repo/demo/app.py",
+      "basename": "app.py",
+      "line": 2,
+      "confidence": 100,
+      "references": 0
+    },
+    {
+      "name": "hash_password",
+      "full_name": "demo.db.hash_password",
+      "simple_name": "hash_password",
+      "type": "import",
+      "file": "/Users/oha/test_repo/demo/app.py",
+      "basename": "app.py",
+      "line": 5,
+      "confidence": 100,
+      "references": 0
+    }
+  ],
+  "unused_classes": [],
+  "unused_variables": [
+    {
+      "name": "JWT_SECRET",
+      "full_name": "app.JWT_SECRET",
+      "simple_name": "JWT_SECRET",
+      "type": "variable",
+      "file": "/Users/oha/test_repo/demo/app.py",
+      "basename": "app.py",
+      "line": 9,
+      "confidence": 60,
+      "references": 0
+    }
+  ],
+  "unused_parameters": [],
+  "unused_files": [
+    {
+      "rule_id": "SKY-E002",
+      "message": "Empty Python file (no code, or docstring-only)",
+      "file": "/Users/oha/test_repo/demo/db.py",
+      "line": 1,
+      "severity": "LOW",
+      "category": "DEAD_CODE"
+    }
+  ],
+  "whitelisted": [],
+  "suppressed": [],
+  "analysis_summary": {
+    "total_files": 2,
+    "excluded_folders": [
+      ".git",
+      "build",
+      ".coverage",
+      "__pycache__",
+      "htmlcov",
+      "node_modules",
+      "dist",
+      "*.egg-info",
+      "venv",
+      ".pytest_cache",
+      ".venv",
+      ".mypy_cache",
+      ".tox"
+    ],
+    "languages": {
+      "Python": 2
+    },
+    "danger_count": 7,
+    "unused_files_count": 1,
+    "total_loc": 38
+  },
+  "danger": [
+    {
+      "rule_id": "SKY-D203",
+      "severity": "CRITICAL",
+      "message": "Use of os.system()",
+      "file": "/Users/oha/test_repo/demo/app.py",
+      "line": 25,
+      "col": 4
+    },
+    {
+      "rule_id": "SKY-D201",
+      "severity": "HIGH",
+      "message": "Use of eval()",
+      "file": "/Users/oha/test_repo/demo/app.py",
+      "line": 31,
+      "col": 13,
+      "compliance_tags": [
+        {
+          "framework": "PCI_DSS_4",
+          "requirement": "6.2.4",
+          "title": "Injection Flaws"
+        },
+        {
+          "framework": "PCI_DSS_4",
+          "requirement": "6.5.1",
+          "title": "Injection Flaws"
+        },
+        {
+          "framework": "OWASP_TOP10",
+          "requirement": "A03:2021",
+          "title": "Injection"
+        },
+        {
+          "framework": "SOC2",
+          "requirement": "CC6.1",
+          "title": "Security Controls"
+        },
+        {
+          "framework": "HIPAA",
+          "requirement": "164.312(a)(1)",
+          "title": "Access Control"
+        }
+      ],
+      "compliance_display": [
+        "PCI DSS 4.0 6.2.4",
+        "PCI DSS 4.0 6.5.1",
+        "OWASP Top 10 A03:2021",
+        "SOC 2 CC6.1",
+        "HIPAA 164.312(a)(1)"
+      ]
+    },
+    {
+      "rule_id": "SKY-D211",
+      "severity": "CRITICAL",
+      "message": "Possible SQL injection: tainted or string-built query.",
+      "file": "/Users/oha/test_repo/demo/app.py",
+      "line": 38,
+      "col": 14,
+      "symbol": "<module>"
+    },
+    {
+      "rule_id": "SKY-D212",
+      "severity": "CRITICAL",
+      "message": "Possible command injection (os.system): tainted input.",
+      "file": "/Users/oha/test_repo/demo/app.py",
+      "line": 25,
+      "col": 4,
+      "symbol": "admin_run",
+      "compliance_tags": [
+        {
+          "framework": "PCI_DSS_4",
+          "requirement": "6.2.4",
+          "title": "Injection Flaws"
+        },
+        {
+          "framework": "OWASP_TOP10",
+          "requirement": "A03:2021",
+          "title": "Injection"
+        },
+        {
+          "framework": "SOC2",
+          "requirement": "CC6.1",
+          "title": "Security Controls"
+        }
+      ],
+      "compliance_display": [
+        "PCI DSS 4.0 6.2.4",
+        "OWASP Top 10 A03:2021",
+        "SOC 2 CC6.1"
+      ]
+    },
+    {
+      "rule_id": "SKY-D216",
+      "severity": "CRITICAL",
+      "message": "Possible SSRF: tainted URL passed to HTTP client.",
+      "file": "/Users/oha/test_repo/demo/app.py",
+      "line": 44,
+      "col": 20,
+      "symbol": "proxy_fetch",
+      "compliance_tags": [
+        {
+          "framework": "OWASP_TOP10",
+          "requirement": "A10:2021",
+          "title": "SSRF"
+        },
+        {
+          "framework": "PCI_DSS_4",
+          "requirement": "6.2.4",
+          "title": "Security Flaws"
+        }
+      ],
+      "compliance_display": [
+        "OWASP Top 10 A10:2021",
+        "PCI DSS 4.0 6.2.4"
+      ]
+    },
+    {
+      "rule_id": "SKY-D223",
+      "severity": "MEDIUM",
+      "message": "Undeclared import 'demo' (provided by: webunit). Add to requirements.txt/pyproject.toml/setup.py.",
+      "file": "/Users/oha/test_repo/demo/app.py",
+      "line": 5,
+      "col": 0,
+      "symbol": "demo"
+    },
+    {
+      "rule_id": "SKY-D223",
+      "severity": "MEDIUM",
+      "message": "Undeclared import 'fastapi'. Not found in requirements.txt/pyproject.toml/setup.py.",
+      "file": "/Users/oha/test_repo/demo/app.py",
+      "line": 4,
+      "col": 0,
+      "symbol": "fastapi"
+    }
+  ],
+  "grade": {
+    "overall": {
+      "score": 45,
+      "letter": "F"
+    },
+    "categories": {
+      "security": {
+        "score": 0,
+        "letter": "F",
+        "weight": 0.35,
+        "key_issue": "CRITICAL: Use of os.system() (4 hits)"
+      },
+      "quality": {
+        "score": 100,
+        "letter": "A+",
+        "weight": 0.25,
+        "key_issue": "No issues found"
+      },
+      "dead_code": {
+        "score": 0,
+        "letter": "F",
+        "weight": 0.2,
+        "key_issue": "5 dead symbols (131.6/1K LOC)"
+      },
+      "dependencies": {
+        "score": 100,
+        "letter": "A+",
+        "weight": 0.1,
+        "key_issue": "No issues found"
+      },
+      "secrets": {
+        "score": 100,
+        "letter": "A+",
+        "weight": 0.1,
+        "key_issue": "No secrets found"
+      }
+    },
+    "total_loc": 38
+  }
+}
