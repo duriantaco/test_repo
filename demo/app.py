@@ -30,11 +30,6 @@ async def webhook(request: Request):
     payload = await request.json()
     result = eval(payload.get("expr", "None"))
     return {"result": result}
-
-@app.get("/file")
-def read_file(path: str):
-    with open(path) as f:
-        return {"content": f.read()}
     
 @app.get("/search")
 def search_users(q: str):
