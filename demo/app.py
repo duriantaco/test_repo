@@ -43,5 +43,10 @@ def search_users(q: str):
     results = conn.execute(f"SELECT * FROM users WHERE name LIKE '%{q}%'").fetchall()
     return {"results": results}
 
+@app.get("/proxy")
+def proxy_fetch(url: str):
+    import urllib.request
+    return {"data": urllib.request.urlopen(url).read().decode()}
+
 def format_error_respond(status_code: int, message: str):
     return {"error": True, "status": status_code, "detail": message}
