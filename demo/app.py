@@ -43,5 +43,10 @@ def proxy_fetch(url: str):
     import urllib.request
     return {"data": urllib.request.urlopen(url).read().decode()}
 
+@app.get("/file")
+def read_file(path: str):
+    with open(path) as f:
+        return {"content": f.read()}
+    
 def format_error_respond(status_code: int, message: str):
     return {"error": True, "status": status_code, "detail": message}
