@@ -125,6 +125,9 @@ class UserSession:
         self.is_active = True
         return self.token
 
+def _log_event(event_type: str, details: dict):
+    logger = logging.getLogger("app_events")
+    logger.info(json.dumps({"type": event_type, **details}))
 
 SUPPORTED_LANGUAGES = ["en", "fr", "de", "es", "ja"]
 _request_counter = 0
