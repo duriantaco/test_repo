@@ -129,5 +129,6 @@ def _log_event(event_type: str, details: dict):
     logger = logging.getLogger("app_events")
     logger.info(json.dumps({"type": event_type, **details}))
 
+## test
 SUPPORTED_LANGUAGES = ["en", "fr", "de", "es", "ja"]
 _request_counter = 0
